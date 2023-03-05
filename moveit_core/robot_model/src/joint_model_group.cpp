@@ -740,14 +740,9 @@ void JointModelGroup::printGroupInfo(std::ostream& out) const
     out << '\n';
     out << "        " << parent_model_->getVariableBounds(variable_name) << '\n';
   }
-  out << "  * Variables Index List:\n";
-  out << "    ";
+  out << "  * Variables Index List:\n    ";
   for (int variable_index : variable_index_list_)
     out << variable_index << ' ';
-  out << "  * Active Variables Index List:\n";
-  out << "    ";
-  for (int active_variable_index : active_variable_index_list_)
-    out << active_variable_index << ' ';
   if (is_contiguous_index_list_)
   {
     out << "(contiguous)";
@@ -756,6 +751,10 @@ void JointModelGroup::printGroupInfo(std::ostream& out) const
   {
     out << "(non-contiguous)";
   }
+  out << '\n';
+    out << "  * Active Variables Index List:\n    ";
+  for (int active_variable_index : active_variable_index_list_)
+    out << active_variable_index << ' ';
   out << '\n';
   if (group_kinematics_.first)
   {
