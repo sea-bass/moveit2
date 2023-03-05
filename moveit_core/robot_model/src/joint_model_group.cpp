@@ -752,7 +752,7 @@ void JointModelGroup::printGroupInfo(std::ostream& out) const
     out << "(non-contiguous)";
   }
   out << '\n';
-    out << "  * Active Variables Index List:\n    ";
+  out << "  * Active Variables Index List:\n    ";
   for (int active_variable_index : active_variable_index_list_)
     out << active_variable_index << ' ';
   out << '\n';
