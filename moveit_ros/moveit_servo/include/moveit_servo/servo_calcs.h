@@ -92,6 +92,9 @@ public:
    */
   void start();
 
+  /** \brief Stop the currently running thread */
+  void stop();
+
   /**
    * Get the MoveIt planning link transform.
    * The transform from the MoveIt planning frame to robot_link_command_frame
@@ -121,9 +124,6 @@ protected:
 
   /** \brief Do calculations for a single iteration. Publish one outgoing command */
   void calculateSingleIteration();
-
-  /** \brief Stop the currently running thread */
-  void stop();
 
   /** \brief Do servoing calculations for Cartesian twist commands. */
   bool cartesianServoCalcs(geometry_msgs::msg::TwistStamped& cmd,
